@@ -67,3 +67,70 @@ function areaCirculo(radioCirculo) {
 console.log("el area del circulo es  " + Math.floor(areaCirculo) + "cm 2");*/
 
 console.groupEnd();
+
+
+// aqui interactuamos con el html 
+
+// calculo del caudrado 
+
+function calcularPerimetroCuadrado() {
+    const input = document.getElementById("InputCuadrado");
+    const value = input.value;
+
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+
+}
+
+
+function calcularAreaCuadrado() {
+    const input = document.getElementById("InputCuadrado");
+    const value = input.value;
+
+    const area = areaCuadrado(value);
+    alert(area);
+
+}
+
+// calculo del triangulo 
+function calcularPerimetroTriangulo() {
+    const inputLado1 = document.getElementById("InputTriangulo");
+    const inputLado2 = document.getElementById("InputTriangulo2");
+    const inputBase = document.getElementById("InputBase");
+
+    const value = parseInt(inputLado1.value);
+    const value2 = parseInt(inputLado2.value);
+    const valueBase = parseInt(inputBase.value);
+    if (value == value2) {
+        if (value != valueBase || value2 != valueBase) {
+            alert(" es un isosceles");
+        } else {
+            alert("no es un isosceles");
+        }
+    } else {
+        if (value == valueBase || value2 == valueBase) {
+            console.log("estoy aqui ");
+        } else {
+            console.log("no es isosceles estoy aqui");
+        }
+    }
+}
+
+function alturaTriangulo(lado1, base) {
+    const altura = Math.sqrt(Math.pow(lado1, 2) - (Math.pow(base, 2) / 4));
+    return altura;
+}
+
+function calcularAlturaTriangulo() {
+    const inputInputTriangulo = document.getElementById("InputTriangulo1");
+    const valueLado1 = parseInt(InputTriangulo.value);
+    console.log(valueLado1);
+    const InputTriangulo2 = document.getElementById("InputTriangulo2");
+    const valueLado2 = parseInt(InputTriangulo2.value);
+    console.log(valueLado2);
+    const inputBase = document.getElementById("InputBase");
+    const valueBase = parseInt(inputBase.value);
+    console.log(valueBase);
+    const altura = alturaTriangulo(valueLado1, valueBase);
+    alert(altura);
+}
